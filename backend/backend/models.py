@@ -251,3 +251,19 @@ class FavoriteBarter(models.Model):
     
     def __str__(self) -> str:
         return f"{self.id} : {self.flipperUser}"
+    
+# ---------- Auction Model ----------
+class Auction(models.Model):
+    hostName = models.CharField(max_length=200, default='')
+    productTitle = models.CharField(max_length=200, default='')
+    basePrice = models.CharField(max_length=100, default='')
+    minimumBid = models.CharField(max_length=100, default='')
+    auctionDate = models.DateField()
+    auctionTime = models.TimeField()
+    auctionDescription = models.CharField(max_length=2000000, default='')
+    auctionLocation = models.CharField(max_length=200, default='')
+    auctionAddress = models.CharField(max_length=10000, default='')
+    productImage = FileField(upload_to='AuctionImages/', blank=True, default='')
+    
+    def __str__(self) -> str:
+        return f"{self.id} : {self.hostName}" 

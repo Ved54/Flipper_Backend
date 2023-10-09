@@ -86,3 +86,7 @@ class FavoriteBarterSerializer(serializers.ModelSerializer):
         model = FavoriteBarter
         fields = '__all__'
         
+class AuctionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Auction
+        fields = '__all__'

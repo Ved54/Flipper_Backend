@@ -140,3 +140,11 @@ def FavBarterList(request, format=None):
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+@api_view(['POST'])
+def AuctionList(request, format=None):
+    serializer = AuctionSerializer(data = request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)

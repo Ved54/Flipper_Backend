@@ -83,6 +83,11 @@ class BarterType(DjangoObjectType):
         model = Barter
         fields = "__all__"
         
+class AuctionType(DjangoObjectType):
+    class Meta:
+        model = Auction
+        fields = "__all__"
+        
 class Query(graphene.ObjectType):
     # ---------- User ----------
     displayUsers = graphene.List(UserType)
@@ -306,6 +311,19 @@ class Query(graphene.ObjectType):
             return Barter.objects.filter(flipperUser=flipperUser)
         except Barter.DoesNotExist:
             raise GraphQLError(f"Uploads with ID {flipperUser} does not exist.")
+        
+    # ---------- Auction ----------
+    displayAuctions = graphene.List(AuctionType)
+    Auctionsbyid = graphene.Field(AuctionType, id = graphene.ID())
+    
+    def resolve_displayAuctions(self, info):
+        return Auction.objects.all()
+    
+    def resolve_Auctionsbyid(self, info, id):
+        try:
+            return Auction.objects.get(id=id)
+        except Auction.DoesNotExist:
+            raise GraphQLError(f"Uploads with ID {id} does not exist.")
         
 class UserUpdate(graphene.Mutation):
     

@@ -26,7 +26,8 @@ urlpatterns = [
     path('favorite/', views.FavoriteList),
     path('rating/', views.RatingList),
     path('barter/', views.BarterList),
-    path('favoritebarter/', views.FavBarterList)
+    path('favoritebarter/', views.FavBarterList),
+    path('auction/', views.AuctionList)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = format_suffix_patterns(urlpatterns)

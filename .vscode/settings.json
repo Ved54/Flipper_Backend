@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "Auctionsbyid",
         "bartersbyid",
         "bikesbyid",
         "bikeupload",
@@ -9,12 +10,14 @@
         "Comms",
         "commsbyid",
         "commupload",
+        "displaybyid",
         "elec",
         "electronicappliancesbyid",
         "electronicappliancesupload",
         "fashionsbyid",
         "fashionupload",
         "Favby",
+        "favoritebarter",
         "Furnitures",
         "furnituresbyid",
         "furnitureupload",

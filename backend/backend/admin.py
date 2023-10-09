@@ -34,3 +34,5 @@ admin.site.register(Rating)
 admin.site.register(Barter)
 
 admin.site.register(FavoriteBarter)
+
+admin.site.register(Auction)
