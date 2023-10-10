@@ -102,6 +102,10 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"User with ID {flipperUser} does not exist.")
         
     # ---------- Car ----------
+    allCars = graphene.List(CarType)
+    def resolve_allCars(self, info):
+        return CarUpload.objects.all()
+    
     displayCars = graphene.List(CarType, flipperUser=graphene.String())
     carsbyid = graphene.Field(CarType, flipperUser=graphene.String())
     def resolve_displayCars(self, info, flipperUser):
@@ -117,6 +121,10 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"Uploads with ID {flipperUser} does not exist.")
         
     # ---------- Property ----------
+    allProperties = graphene.List(PropertyType)
+    def resolve_allProperties(self, info):
+        return PropertyUpload.objects.all()
+    
     displayProperties = graphene.List(PropertyType, flipperUser=graphene.String())
     propertiesbyid = graphene.Field(PropertyType, flipperUser=graphene.String())
     def resolve_displayProperties(self, info, flipperUser):
@@ -132,6 +140,10 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"Uploads with ID {flipperUser} does not exist.")
     
     # ---------- Mobile ----------
+    allMobiles = graphene.List(MobileType)
+    def resolve_allMobiles(self, info):
+        return MobileUpload.objects.all()
+    
     displayMobiles = graphene.List(MobileType, flipperUser=graphene.String())
     mobilesbyid = graphene.Field(MobileType, flipperUser=graphene.String())
     def resolve_displayMobiles(self, info, flipperUser):
@@ -147,6 +159,10 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"Uploads with ID {flipperUser} does not exist.")
     
     # ---------- Job ----------
+    allJobs = graphene.List(JobType)
+    def resolve_allJobs(self, info):
+        return JobUpload.objects.all()
+    
     displayJobs = graphene.List(JobType, flipperUser=graphene.String())
     jobsbyid = graphene.Field(JobType, flipperUser=graphene.String())
     def resolve_displayJobs(self, info, flipperUser):
@@ -162,6 +178,10 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"Uploads with ID {flipperUser} does not exist.")
 
     # ---------- Bike ----------
+    allBikes = graphene.List(BikeType)
+    def resolve_allBikes(self, info):
+        return BikeUpload.objects.all()
+    
     displayBikes = graphene.List(BikeType, flipperUser=graphene.String())
     bikesbyid = graphene.Field(BikeType, flipperUser=graphene.String())
     def resolve_displayBikes(self, info, flipperUser):
@@ -177,6 +197,10 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"Uploads with ID {flipperUser} does not exist.")
 
     # ---------- Furniture ----------
+    allFurnitures = graphene.List(FurnitureType)
+    def resolve_allFurnitures(self, info):
+        return FurnitureUpload.objects.all()
+    
     displayFurnitures = graphene.List(FurnitureType, flipperUser=graphene.String())
     furnituresbyid = graphene.Field(FurnitureType, flipperUser=graphene.String())
     def resolve_displayFurnitures(self, info, flipperUser):
@@ -192,6 +216,10 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"Uploads with ID {flipperUser} does not exist.")
 
     # ---------- Fashion ----------
+    allFashions = graphene.List(FashionType)
+    def resolve_allFashions(self, info):
+        return FashionUpload.objects.all()
+    
     displayFashions = graphene.List(FashionType, flipperUser=graphene.String())
     fashionsbyid = graphene.Field(FashionType, flipperUser=graphene.String())
     def resolve_displayFashions(self, info, flipperUser):
@@ -207,6 +235,10 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"Uploads with ID {flipperUser} does not exist.")
 
     # ---------- Electronic & Appliances ----------
+    allElecApps = graphene.List(ElectronicAppliancesType)
+    def resolve_allElecApps(self, info):
+        return ElectronicAppliancesUpload.objects.all()
+    
     displayElectronicAppliances = graphene.List(ElectronicAppliancesType, flipperUser=graphene.String())
     electronicappliancesbyid = graphene.Field(ElectronicAppliancesType, flipperUser=graphene.String())
     def resolve_displayElectronicAppliances(self, info, flipperUser):
@@ -222,6 +254,10 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"Uploads with ID {flipperUser} does not exist.")
     
     # ---------- Commercial Vehicles ----------
+    allComms = graphene.List(CommType)
+    def resolve_allComms(self, info):
+        return CommUpload.objects.all()
+    
     displayComms = graphene.List(CommType, flipperUser=graphene.String())
     commsbyid = graphene.Field(CommType, flipperUser=graphene.String())
     def resolve_displayComms(self, info, flipperUser):
@@ -237,6 +273,10 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"Uploads with ID {flipperUser} does not exist.")
     
     # ---------- Books, Sports & Hobbies ----------
+    allBSHs = graphene.List(BSHType)
+    def resolve_allBSHs(self, info):
+        return BooksSportsHobbiesUpload.objects.all()
+    
     displayBSHs = graphene.List(BSHType, flipperUser=graphene.String())
     BSHsbyid = graphene.Field(BSHType, flipperUser=graphene.String())
     def resolve_displayBSHs(self, info, flipperUser):
@@ -252,6 +292,10 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"Uploads with ID {flipperUser} does not exist.")
 
     # ---------- Pet ----------
+    allPets = graphene.List(PetType)
+    def resolve_allPets(self, info):
+        return PetUpload.objects.all()
+    
     displayPets = graphene.List(PetType, flipperUser=graphene.String())
     petsbyid = graphene.Field(PetType, flipperUser=graphene.String())
     def resolve_displayPets(self, info, flipperUser):
@@ -267,6 +311,10 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"Uploads with ID {flipperUser} does not exist.")
 
     # ---------- Service ----------
+    allServices = graphene.List(ServiceType)
+    def resolve_allServices(self, info):
+        return ServiceUpload.objects.all()
+    
     displayServices = graphene.List(ServiceType, flipperUser=graphene.String())
     servicesbyid = graphene.Field(ServiceType, flipperUser=graphene.String())
     def resolve_displayServices(self, info, flipperUser):
@@ -298,8 +346,13 @@ class Query(graphene.ObjectType):
             raise GraphQLError(f"User with ID {flipperUser} does not exist.")
     
     # ---------- Barter ----------
+    allBarters = graphene.List(BarterType)
+    def resolve_allBarters(self, info):
+        return Barter.objects.all()
+    
     displayBarters = graphene.List(BarterType, flipperUser=graphene.String())
     bartersbyid = graphene.List(BarterType, flipperUser=graphene.String())
+    
     def resolve_displayBarters(self, info, flipperUser):
         if flipperUser:
             return Barter.objects.exclude(flipperUser=flipperUser)
@@ -315,7 +368,6 @@ class Query(graphene.ObjectType):
     # ---------- Auction ----------
     displayAuctions = graphene.List(AuctionType)
     Auctionsbyid = graphene.Field(AuctionType, id = graphene.ID())
-    
     def resolve_displayAuctions(self, info):
         return Auction.objects.all()
     
